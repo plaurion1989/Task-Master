@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">task master</string>
+    <string name="Welcome">Welcome</string>
+    <string name="TaskMaster">Task Master</string>
+    <string name="loginbutton">Log In</string>
+    <string name="pictureOfPatrick">picture of patrick</string>
+</resources>
