@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public final static String TASK_NAME_EXTRA_STRING = "taskName";
+    public final static String TASK_STATUS_EXTRA_STRING = "taskStatus";
     protected static SharedPreferences sharedPreferences;
     protected static Resources res;
     @Override
@@ -55,18 +56,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Step 2-1: Create a data model class, and create that data by hand
         List<Task> taskList = new ArrayList<>();
-        taskList.add(new Task("Sort shoes", new Date()));
-        taskList.add(new Task("Pair socks", new Date()));
-        taskList.add(new Task("Wash hair with shampoo", new Date()));
-        taskList.add(new Task("Sort shoes 2", new Date()));
-        taskList.add(new Task("Pair socks 2", new Date()));
-        taskList.add(new Task("Wash hair with shampoo2", new Date()));
-        taskList.add(new Task("Sort shoes 3", new Date()));
-        taskList.add(new Task("Pair socks 3", new Date()));
-        taskList.add(new Task("Wash hair with shampoo 3", new Date()));
-        taskList.add(new Task("Sort shoes 4", new Date()));
-        taskList.add(new Task("Pair socks 4", new Date()));
-        taskList.add(new Task("Wash hair with shampoo 4", new Date()));
+        taskList.add(new Task("Sort shoes", "new", new Date()));
+        taskList.add(new Task("Pair socks", "assigned", new Date()));
+        taskList.add(new Task("Wash hair with shampoo", "new", new Date()));
+        taskList.add(new Task("Sort shoes 2", "completed", new Date()));
+        taskList.add(new Task("Pair socks 2", "in-progress", new Date()));
+        taskList.add(new Task("Wash hair with shampoo2", "new", new Date()));
+        taskList.add(new Task("Sort shoes 3", "new", new Date()));
+        taskList.add(new Task("Pair socks 3", "completed", new Date()));
+        taskList.add(new Task("Wash hair with shampoo 3", "new", new Date()));
+        taskList.add(new Task("Sort shoes 4", "completed", new Date()));
+        taskList.add(new Task("Pair socks 4", "in-progress", new Date()));
+        taskList.add(new Task("Wash hair with shampoo 4", "assigned", new Date()));
 
         // Step 1-4: Make a class whose sole purpose is to manage RecyclerViews and attach it to the RecyclerView
         // Step 2-2: Pass data into RecyclerViewAdapter
