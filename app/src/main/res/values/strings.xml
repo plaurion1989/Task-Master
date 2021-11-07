@@ -21,4 +21,7 @@
     <string name="taskThreeMainTextView">Task Three</string>
     <string name="WelcomeUsername">Welcome %1$s</string>
     <string name="saveUserButton">Save</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settingsImageViewContentDescription">settings intent onclick</string>
 </resources>

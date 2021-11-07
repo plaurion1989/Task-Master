@@ -3,6 +3,8 @@ package com.plaurion.taskmaster.activities;
 import static com.plaurion.taskmaster.activities.SettingsActivity.USER_NAME_KEY;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -14,6 +16,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.plaurion.taskmaster.R;
+import com.plaurion.taskmaster.adapters.TaskRecyclerViewAdapter;
+import com.plaurion.taskmaster.models.Task;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,40 +45,34 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(settingsIntent);
                 }
         );
+        // Step 1-1: Add a RecyclerView to your layout
+        // Step 1-2: Grab the RecyclerView by ID
+        RecyclerView taskMainRecyclerView = findViewById(R.id.taskMainRecyclerView);
 
-        TextView taskOneMainTextView = (TextView) findViewById(R.id.taskOneMainTextView);
-        taskOneMainTextView.setOnClickListener(view ->
-                {
-                    Intent taskDetailIntent = new Intent(MainActivity.this, TaskDetails.class);
-                    taskDetailIntent.putExtra(TASK_NAME_EXTRA_STRING, taskOneMainTextView.getText());
+        // Step 1-3: Assign a layout manager for this RecyclerView
+        RecyclerView.LayoutManager lm = new LinearLayoutManager(this);  // vertical layout
+        taskMainRecyclerView.setLayoutManager(lm);
 
-                    startActivity(taskDetailIntent);
+        // Step 2-1: Create a data model class, and create that data by hand
+        List<Task> taskList = new ArrayList<>();
+        taskList.add(new Task("Sort shoes", new Date()));
+        taskList.add(new Task("Pair socks", new Date()));
+        taskList.add(new Task("Wash hair with shampoo", new Date()));
+        taskList.add(new Task("Sort shoes 2", new Date()));
+        taskList.add(new Task("Pair socks 2", new Date()));
+        taskList.add(new Task("Wash hair with shampoo2", new Date()));
+        taskList.add(new Task("Sort shoes 3", new Date()));
+        taskList.add(new Task("Pair socks 3", new Date()));
+        taskList.add(new Task("Wash hair with shampoo 3", new Date()));
+        taskList.add(new Task("Sort shoes 4", new Date()));
+        taskList.add(new Task("Pair socks 4", new Date()));
+        taskList.add(new Task("Wash hair with shampoo 4", new Date()));
 
-                }
-        );
+        // Step 1-4: Make a class whose sole purpose is to manage RecyclerViews and attach it to the RecyclerView
+        // Step 2-2: Pass data into RecyclerViewAdapter
+        TaskRecyclerViewAdapter taskRecyclerViewAdapter = new TaskRecyclerViewAdapter(this, taskList);
+        taskMainRecyclerView.setAdapter(taskRecyclerViewAdapter);
 
-        TextView taskTwoMainTextView = (TextView) findViewById(R.id.taskTwoMainTextView);
-        taskTwoMainTextView.setOnClickListener(view ->
-                {
-                    Intent taskDetailIntent = new Intent(MainActivity.this, TaskDetails.class);
-                    taskDetailIntent.putExtra(TASK_NAME_EXTRA_STRING, taskTwoMainTextView.getText());
-
-                    startActivity(taskDetailIntent);
-
-                }
-        );
-
-
-        TextView taskThreeMainTextView = (TextView) findViewById(R.id.taskThreeMainTextView);
-        taskThreeMainTextView.setOnClickListener(view ->
-                {
-                    Intent taskDetailIntent = new Intent(MainActivity.this, TaskDetails.class);
-                    taskDetailIntent.putExtra(TASK_NAME_EXTRA_STRING, taskThreeMainTextView.getText());
-
-                    startActivity(taskDetailIntent);
-
-                }
-        );
 
         Button addTaskButton = (Button) findViewById(R.id.addTaskButton);
         addTaskButton.setOnClickListener(view ->
