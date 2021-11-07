@@ -11,4 +11,14 @@
     <string name="allTasksPlaceholderDescription">Place Holder Image</string>
     <string name="taskTitleEditText">Title</string>
     <string name="taskBodyEditText">Body</string>
+    <string name="taskDetailsHeading">Task Details</string>
+    <string name="taskBodyLorumIpsum">This is where you would put your task body details in for the task you selected.</string>
+    <string name="taskTitleLorumIpsum">Task Title Here</string>
+    <string name="settingsTitleTextView">Settings</string>
+    <string name="userNameTextView">User Name Here</string>
+    <string name="taskOneMainTextView">Task One</string>
+    <string name="taskTwoMainTextView">Task Two</string>
+    <string name="taskThreeMainTextView">Task Three</string>
+    <string name="WelcomeUsername">Welcome %1$s</string>
+    <string name="saveUserButton">Save</string>
 </resources>
