@@ -2,6 +2,13 @@
     <string name="app_name">task master</string>
     <string name="Welcome">Welcome</string>
     <string name="TaskMaster">Task Master</string>
-    <string name="loginbutton">Log In</string>
+    <string name="addTaskButton">Add a Task</string>
     <string name="pictureOfPatrick">picture of patrick</string>
+    <string name="allTasksButton">All Tasks</string>
+    <string name="addTaskHeading">Add Task</string>
+    <string name="buttonAddTask">Add Task</string>
+    <string name="AllTasksHeading">All Tasks</string>
+    <string name="allTasksPlaceholderDescription">Place Holder Image</string>
+    <string name="taskTitleEditText">Title</string>
+    <string name="taskBodyEditText">Body</string>
 </resources>
