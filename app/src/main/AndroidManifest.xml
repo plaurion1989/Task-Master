@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMaster">
         <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.TaskDetails"
+            android:exported="false" />
+        <activity
             android:name=".activities.AllTasksActivity"
             android:exported="false" />
         <activity
